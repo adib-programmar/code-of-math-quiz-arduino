@@ -91,46 +91,58 @@ void generateQuestions() {
     }
     
     switch (type) {
-      case 0:  // Addition
-        problems[i] = String(a) + "+" + String(b) + "=?";
-        solutions[i] = a + b;
-        break;
-      case 1:  // Subtraction
-        problems[i] = String(a + b) + "-" + String(a) + "=?";
-        solutions[i] = b;
-        break;
-      case 2:  // Multiplication
-        problems[i] = String(a) + "X" + String(c) + "=?";
-        solutions[i] = a * c;
-        break;
-      case 3:  // Division
-        problems[i] = String(a * c) + "/" + String(c) + "=?";
-        solutions[i] = a;
-        break;
-      case 4:  // Mixed operation
-        problems[i] = String(a) + "+" + String(b) + "X" + String(c) + "=?";
-        solutions[i] = a + (b * c);
-        break;
-      case 5:  // Equation
-        problems[i] = "x+" + String(a) + "=" + String(a + b) + ",x=?";
-        solutions[i] = b;
-        break;
-      case 6:  // Pattern
-        problems[i] = String(a) + "," + String(a + c) + "," + String(a + 2 * c) + ",?";
-        solutions[i] = a + 3 * c;
-        break;
-      case 7:  // Power
-        problems[i] = String(c) + "^" + String(2) + "=?";
-        solutions[i] = c * c;
-        break;
-      case 8:  // Square root
-        problems[i] = "sqrt(" + String(a * a) + ")=?";
-        solutions[i] = a;
-        break;
-      case 9:  // Percentage (new type)
-        problems[i] = String(a) + "% of " + String(b * 100) + "=?";
-        solutions[i] = a * b;
-        break;
+  case 0:  // Addition
+    problems[i] = String(a) + "+" + String(b) + "=?";
+    solutions[i] = a + b;
+    break;
+  
+  case 1:  // Subtraction
+    problems[i] = String(a + b) + "-" + String(a) + "=?";
+    solutions[i] = b;
+    break;
+  
+  case 2:  // Multiplication
+    problems[i] = String(a) + "X" + String(c) + "=?";
+    solutions[i] = a * c;
+    break;
+  
+  case 3:  // Division
+    problems[i] = String(a * c) + "/" + String(c) + "=?";
+    solutions[i] = a;
+    break;
+  
+  case 4:  // Mixed operation
+    problems[i] = String(a) + "+" + String(b) + "X" + String(c) + "=?";
+    solutions[i] = a + (b * c);
+    break;
+  
+  case 5:  // Equation
+    problems[i] = "x+" + String(a) + "=" + String(a + b) + ",x=?";
+    solutions[i] = b;
+    break;
+  
+  case 6:  // Pattern
+    problems[i] = String(a) + "," + String(a + c) + "," + String(a + 2 * c) + ",?";
+    solutions[i] = a + 3 * c;
+    break;
+  
+  case 7:  // Power
+    problems[i] = String(c) + "^" + String(2) + "=?";
+    solutions[i] = c * c;
+    break;
+  
+  case 8:  // Square root
+    problems[i] = "sqrt(" + String(a * a) + ")=?";
+    solutions[i] = a;
+    break;
+  
+  case 9:  // Factorial (new type)
+    problems[i] = String(a) + "! = ?";
+    solutions[i] = 1;
+    for (int j = 1; j <= a; j++) {
+      solutions[i] *= j;  // Calculate the factorial of 'a'
+    }
+    break;
     }
   }
 }
