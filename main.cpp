@@ -199,7 +199,7 @@ void chooseDifficulty() {
   }
   
   currentTimeLimit = timeLimits[difficulty];
-  delay(500);
+  
 }
 
 void start_Game() {
